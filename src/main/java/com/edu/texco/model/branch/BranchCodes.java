@@ -21,5 +21,6 @@ public class BranchCodes {
     @OneToOne
     private Branches branchName;
     @OneToOne
-    private Address address;
+    private BranchAddress address;
+
 }

@@ -22,4 +22,10 @@ public class Branches {
     private BranchAddress branchAddress;
     @OneToOne(cascade = CascadeType.ALL)
     private BranchCodes branchCodes;
+    @Builder.Default
+    private Double balance = 0.00;
+    @Builder.Default
+    private Double totalBalance = 0.00;
+    @Builder.Default
+    private Double allUsersBalance = 0.00;
 }

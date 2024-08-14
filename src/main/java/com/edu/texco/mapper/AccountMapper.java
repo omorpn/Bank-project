@@ -15,6 +15,7 @@ public class AccountMapper {
         return Account.builder()
                 .username(account.getUsername())
                 .accountType(account.getAccountType())
+                .accountName(account.getAccountName())
                 .overdraftLimit(account.getOverdraftLimit())
                 .lastTransactionDate(account.getLastTransactionDate())
                 .interestRate(account.getInterestRate())
@@ -36,6 +37,7 @@ public class AccountMapper {
       return AccountDto.builder()
                 .username(accountDto.getUsername())
                 .accountType(accountDto.getAccountType())
+              .accountName(accountDto.getAccountName())
                 .overdraftLimit(accountDto.getOverdraftLimit())
                 .lastTransactionDate(accountDto.getLastTransactionDate())
                 .interestRate(accountDto.getInterestRate())
@@ -47,6 +49,7 @@ public class AccountMapper {
                 .accountName(accountDto.getAccountName())
                 .accountHolderAddress(accountDto.getAccountHolderAddress())
                 .balance(accountDto.getBalance())
+              .phoneNumber(accountDto.getPhoneNumber())
                 .password(accountDto.getPassword())
                 .build();
 

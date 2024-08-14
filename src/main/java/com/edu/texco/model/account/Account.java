@@ -2,6 +2,8 @@ package com.edu.texco.model.account;
 
 import com.edu.texco.model.branch.BranchCodes;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +27,8 @@ public class Account {
     @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false, unique = true)
+    @Email
+    @Size(max =100)
     private String email;
     @Column(nullable = false, unique = true)
     private String phoneNumber;
@@ -47,9 +51,10 @@ public class Account {
     private Double overdraftLimit;
     private Double interestRate;
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false)
     private LocalDateTime lastTransactionDate;
     @OneToOne(cascade = CascadeType.ALL)
     private Address accountHolderAddress;
     private String identificationNumber;
+    @Size(min=4,max = 4)
+    private String pin;
 }
